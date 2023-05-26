@@ -10,7 +10,7 @@ body {
 }
 
 .active {
-    background-image: url(https://github.com/netology-code/ahj-homeworks/blob/video/dom/pic/goblin.png?raw=true);
+    background-image: url('/src/statick/goblin.png');
     display: inline-block;
     border: 4px double black;
     height: 130px;
