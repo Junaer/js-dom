@@ -40,5 +40,6 @@
   },
   "dependencies": {
     "core-js": "^3.30.2"
-  }
+  },
+  "repository": "https://github.com/Junaer/js-dom.git"
 }

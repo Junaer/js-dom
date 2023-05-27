@@ -45,6 +45,6 @@ function play (start) {
     } 
 }
 
-let start = setInterval(play, 1500)
+let start = setInterval(play, 1000)
 
 play(start)
