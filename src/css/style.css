@@ -17,3 +17,6 @@ body {
     width: 130px;
     box-sizing: border-box;
 }
+.hammer{
+    cursor: url('../statick/hammer.png') 2 2, auto;
+}

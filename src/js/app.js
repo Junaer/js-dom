@@ -1,19 +1,30 @@
-// TODO: write code here
+import { Game } from "./game/game"
 
+
+let holes = document.querySelectorAll('.hole')
 let counter = document.querySelector('.counter')
 let miss = document.querySelector('.miss')
 
-let holes = document.querySelectorAll('.hole')
-let activeHole = document.querySelector('.active')
+let body = document.querySelector('body')
+
+
+let game = new Game(getRandomArbitrary)
+let start = setInterval(game.play, 3000)
+
+
 
  holes.forEach(element => {
     element.addEventListener('click', () => {
         if (element.classList[2]) {
+            console.log(body.style.cursor)
+            body.classList.toggle('hammer')
             counter.textContent++
+            miss.textContent--
+            clearInterval(game.play(start))
+            setTimeout(() => body.classList.toggle('hammer'), 250)
         }else{
             miss.textContent++
         }
-        
     })
  });
 
@@ -22,29 +33,7 @@ function getRandomArbitrary() {
     return Math.round(int)
   }
 
-function play (start) {
-    if (miss.textContent < 10 && counter.textContent < 10) {
-        let activeHole = document.querySelector('.active')
-        activeHole.classList.toggle('active') 
-        activeHole.classList.add('hole')
-        let numberElement = getRandomArbitrary()
-        let nextActive = holes[numberElement]
-        nextActive.classList.toggle('active')
-    }else if (miss.textContent >= 10) {
-        clearInterval(start)
-        alert('lose')
-        counter.textContent = 0
-        miss.textContent = 0
-        start
-    }else if (counter.textContent >= 10) {
-        clearInterval(start)
-        alert('win')
-        counter.textContent = 0
-        miss.textContent = 0
-        start
-    } 
-}
 
-let start = setInterval(play, 1000)
 
-play(start)
+
+
