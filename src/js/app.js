@@ -9,7 +9,7 @@ let body = document.querySelector('body')
 
 
 let game = new Game(getRandomArbitrary)
-let start = setInterval(game.play, 3000)
+let start = setInterval(game.play, 1000)
 
 
 
