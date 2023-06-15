@@ -20,7 +20,7 @@ let start = setInterval(game.play, 1000)
             body.classList.toggle('hammer')
             counter.textContent++
             miss.textContent--
-            clearInterval(game.play(start))
+            clearInterval(game.play)
             setTimeout(() => body.classList.toggle('hammer'), 250)
         }else{
             miss.textContent++
