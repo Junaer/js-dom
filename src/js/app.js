@@ -9,18 +9,23 @@ let body = document.querySelector('body')
 
 
 let game = new Game(getRandomArbitrary)
-let start = setInterval(game.play, 1000)
+let start = setInterval(game.play, 3000)
 
 
 
  holes.forEach(element => {
     element.addEventListener('click', () => {
         if (element.classList[2]) {
-            console.log(body.style.cursor)
             body.classList.toggle('hammer')
             counter.textContent++
-            miss.textContent--
-            clearInterval(game.play)
+            if (miss.textContent == 0) {
+
+            }else{
+                miss.textContent--
+            }
+            clearInterval(start)
+            game.travel()
+            start = setInterval(game.play, 3000)
             setTimeout(() => body.classList.toggle('hammer'), 250)
         }else{
             miss.textContent++
