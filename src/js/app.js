@@ -9,7 +9,7 @@ let body = document.querySelector('body')
 
 
 let game = new Game(getRandomArbitrary)
-let start = setInterval(game.play, 3000)
+let start = setInterval(game.play, 1000)
 
 
 
@@ -25,7 +25,7 @@ let start = setInterval(game.play, 3000)
             }
             clearInterval(start)
             game.travel()
-            start = setInterval(game.play, 3000)
+            start = setInterval(game.play, 1000)
             setTimeout(() => body.classList.toggle('hammer'), 250)
         }else{
             miss.textContent++
